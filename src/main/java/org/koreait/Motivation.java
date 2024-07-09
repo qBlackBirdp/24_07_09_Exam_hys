@@ -1,15 +1,13 @@
 package org.koreait;
 
-import java.time.LocalDate;
-
 public class Motivation {
     private int id;
     private String body;
     private String writer;
     private String regDate;
 
-    public Motivation(int id, String body, String writer, LocalDate regDate) {
-        this.regDate = String.valueOf(regDate);
+    public Motivation(int id, String body, String writer, String regDate) {
+        this.regDate = regDate;
         this.id = id;
         this.body = body;
         this.writer = writer;

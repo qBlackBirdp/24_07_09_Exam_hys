@@ -1,6 +1,7 @@
 package org.koreait;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 import static org.koreait.App.*;
@@ -77,12 +78,13 @@ public class MotivationController {
 
         int id = lastId++;
 
-        LocalDate now = LocalDate.now();
+        String dateTime = DateTimeFormatter.ofPattern("yy-MM-dd hh:mm:ss")
+                .format(LocalDateTime.now());
 
 
 
 
-        motivations.add(new Motivation(id, body, writer, now));
+        motivations.add(new Motivation(id, body, writer, dateTime));
         System.out.printf("%d번 명언이 등록되었습니다.\n", id);
     }
 }
